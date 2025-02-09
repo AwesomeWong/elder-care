@@ -1,0 +1,76 @@
+// 对部分样式进行重置
+body {
+  color: var(--td-text-color-secondary);
+  font-family: -apple-system, BlinkMacSystemFont, var(--td-font-family);
+  font: var(--td-font-body-medium);
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+  min-width: 1024px;
+}
+
+pre {
+  font-family: var(--td-font-family);
+}
+a:hover {
+  color: #fff;
+}
+ul,
+dl,
+li,
+dd,
+dt {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.t-button--variant-base.t-button--theme-primary:not(.t-is-disabled):not(
+    .t-button--ghost
+  ) {
+  background-color: var(--color-main);
+  border: solid 1px var(--color-main);
+}
+// 重置用户的导入按钮
+.baseList .t-button__text {
+  color: var(--color-white) !important;
+}
+//重置按钮的点击颜色
+.t-button--variant-base.t-button--theme-primary:not(.t-is-disabled):not(
+    .t-button--ghost
+  ) {
+  --ripple-color: var(--color-link);
+}
+// 重置
+.t-select-option.t-is-selected .t-checkbox__label {
+  color: var(--color-main);
+}
+.t-cascader .t-fake-arrow--active {
+  color: var(--color-main);
+}
+.t-table__expand-box:hover {
+  color: var(--color-main);
+}
+
+// 导航样式重置
+.t-head-menu__inner {
+  min-width: 1300px !important;
+  .t-menu:first-child{
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,209 @@
+
+
+:deep(.dialog-form) {
+    .contractTit {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 16px;
+
+        span {
+            &:first-child {
+                font-weight: 700;
+            }
+        }
+
+        .t-icon {
+            fill: #FFAD33;
+            font-size: 18px;
+            margin-left: 10px;
+            margin-right: 5px;
+        }
+
+        .titTip {
+            color: #FFAD33;
+        }
+    }
+
+    .t-form__item {
+        &:nth-child(odd) {
+            padding-right: 15px;
+            // width: calc(50% - 30px);
+        }
+
+        &:nth-child(even) {
+            padding-left: 15px;
+            // width: calc(50% - 30px);
+        }
+    }
+
+}
+
+// 账单
+:deep(.fillCon) {
+    box-shadow: 0 2px 12px 0 rgba(#939393, 0.20);
+    border-radius: 2px;
+    margin-bottom: 10px;
+    padding: 0 4px 20px 20px;
+    width: 100%;
+
+    &.conBpd {
+        padding-bottom: 12px;
+    }
+
+    .titleInfo {
+        height: 49px;
+        line-height: 49px;
+        font-size: var(--font-size-16);
+        color: var(--color-bk1);
+        display: flex;
+        padding-right: 16px;
+
+        .lText {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            
+        }
+
+        .rText {
+            font-size: var(--font-size-14);
+            color: var(--color-bk2);
+
+            span {
+                padding-left: 16px;
+            }
+        }
+    }
+
+    .itemCon {
+        min-height: 105px;
+        max-height: 296px;
+        overflow-y: scroll;
+        padding-right: 12px;
+
+        &.conH {
+            max-height: 350px;
+        }
+
+        &::-webkit-scrollbar {
+            /* 对应纵向滚动条的宽度 */
+            width: 4px;
+            /* 对应横向滚动条的宽度 */
+            height: 4px;
+        }
+
+        /* 滚动条轨道 */
+        &::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        ul {
+            background: #F6FBFA;
+            border-radius: 2px;
+            padding: 15px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.bg {
+                background: #FCFBF6;
+            }
+
+            li {
+                line-height: 22px;
+                padding: 5px 0;
+                width: 50%;
+                color: var(--color-bk2);
+                display: flex;
+
+                &.fist {
+                    padding-bottom: 17px;
+                }
+
+                label {
+                    color: var(--color-bk4);
+                    padding-right: 10px;
+                    vertical-align: top;
+                }
+
+
+                .lText {
+                    flex: 1;
+
+                    .bt-small {
+                        display: inline-block;
+                        margin-left: 10px;
+                        font-size: var(--font-size-11);
+                    }
+                }
+
+
+
+                .t-textarea {
+                    display: inline-block;
+                    width: calc(100% - 80px);
+                }
+
+                .t-input-number .t-input-number__decrease,
+                .t-input-number .t-input-number__increase {
+                    background: var(--color-white);
+                }
+
+                .t-is-disabled {
+
+                    .t-input-number__decrease,
+                    .t-input-number__increase {
+                        background: #eee;
+
+                        &:hover {
+
+                            .t-icon {
+                                color: rgb(154, 154, 154);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .t-is-disabled {
+        .t-textarea__limit {
+            background: #eee;
+        }
+    }
+}
+
+:deep(.bg-wt) {
+    &.min-steph {
+        padding-bottom: 40px;
+    }
+
+    
+
+    .pd {
+        padding-bottom: 80px;
+    }
+}
+
+:deep(.total) {
+    width: 100%;
+    padding: 10px 0 0;
+    display: flex;
+    align-items: center;
+
+    .text {
+        padding-right: 32px;
+    }
+
+    .bt {
+        padding: 0 10px;
+    }
+}
+

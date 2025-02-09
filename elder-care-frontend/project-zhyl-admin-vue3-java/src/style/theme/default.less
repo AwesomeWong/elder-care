@@ -1,0 +1,509 @@
+:root,
+:root[theme-color='defult'] {
+  // 主题色板
+  --color-main: #00b8a0;
+  --color-aux1: #34c7b3;
+  --color-aux2: #7edbce;
+  --color-aux3: #f6fcfc;
+  --color-aux4: #f9fefd;
+  --color-aux5: #ebf6f5;
+
+  --color-success: #27ba9b;
+  --color-warning: #ffab2e;
+  --color-error: #e34d59;
+  --color-error1: #e8707a;
+  --color-error2: #cb2633;
+  --color-error3: #f0a5ab;
+
+  --color-black: #000000;
+  --color-bk1: #191919;
+  --color-bk2: #262626;
+  --color-bk3: #595959;
+  --color-bk4: #999999;
+  --color-bk5: #737373;
+  --color-bk6: #bfbfbf;
+  --color-bk7: #e2edea;
+  --color-bk8: #e1f0ec;
+  --color-bk9: #c4ded7;
+  --color-bk10: #fafafa;
+  --color-bk11: #d9e1eb;
+  --color-bk12: #eef7f5;
+  --color-bk13: #717875;
+  --color-bk14: #f2f9f7;
+  --color-bk15: #ddf1ef;
+  --color-white: #ffffff;
+  --color-bk: #979797;
+  --color-border: #e8e8e8;
+  --color-border1: #d9d9d9;
+  --color-border2: #ccd2d9;
+  --color-link: #008d71;
+  --color-active: #036c57;
+  --color-hover: #00b8a0;
+  --color-disable: rgba(0, 141, 113, 5.43);
+  --color-button-hover: #00b49d;
+  --color-font1: #737373;
+  --color-font2: #727272;
+  --color-font3: #6f6f6f;
+  //列表表头颜色
+  --color-tableHeader-bg: #f3f8f9;
+  //列表行hover颜色
+  --color-tableTr-hover: #fafcff;
+  // 间距
+  --space-main-min: 0px;
+  --space-main: 20px;
+	--font-size-16:16px;
+	--font-size-14:14px;
+	--font-size-12:12px;
+  --font-size-11:11px;
+	--font-size-10:10px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-main);
+
+  &:active {
+    color: var(--color-font1);
+  }
+
+  &:hover {
+    color: var(--color-font1);
+  }
+}
+// 全局容器 - 适配 先干掉
+.container {
+  // width: 1200px;
+  // margin: 0 auto;
+}
+
+.logo img {
+  width: 158.33px;
+  height: 48px;
+}
+
+// 原子化CSS定义 将高频使用的样式单独抽离 使用时拼合到calss里
+
+// 按钮
+.auto{
+  width: auto!important;
+  padding: 0 12px;
+}
+.bt,
+.bt-grey,
+.bt-red,
+.bt-forbid,.bt-small {
+  display: block;
+  line-height: 30px;
+  width: 100%;
+  font-size: 14px;
+  background: var(--color-main);
+  color: var(--color-white);
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: var(--color-button-hover);
+  }
+
+  &:active {
+    background-color: var(--color-link);
+  }
+}
+
+.bt-grey {
+  color: var(--color-black);
+  background: var(--color-bk7);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-bk8);
+  }
+
+  &:active {
+    background-color: var(--color-bk9);
+  }
+}
+
+.bt-red {
+  color: var(--color-white);
+  background: var(--color-error);
+
+  &:hover {
+    background-color: var(--color-error1);
+  }
+
+  &:active {
+    background-color: var(--color-error2);
+  }
+}
+.errorEmpty .t-input {
+  border-color: var(--td-error-color);
+}
+// 禁止按钮
+.bt-forbid {
+  background: var(--color-bk14);
+  color: #939897;
+  cursor: no-drop;
+  &:hover,
+  &:active {
+    background: var(--color-bk14);
+  }
+}
+.bt-small,.warBtn{
+  display: inline-block;
+  width: 68px;
+  height: 18px;
+  line-height: 16px;
+  border-radius: 9px;
+  padding: 1px 6px;
+  margin-left: 10px;
+  font-size: var(--font-size-11);
+  color: var(--color-link);
+  background: #E5F4F2;
+  cursor: default;
+  &:hover,
+  &:active {
+    background: #E5F4F2;
+  }
+}
+.warBtn {
+  background: #FFEDE1;
+  color: #FF6800;
+  display: inline-block;
+  &:hover,
+  &:active {
+    background: #FFCFAE;
+  }
+}
+.t-popup{
+  .t-menu__popup{
+    .t-menu__item:hover:not(.t-is-active):not(.t-is-opened):not(
+        .t-is-disabled
+      ):not(.t-submenu__item)
+    {
+      color: var(--color-main) !important;
+    } 
+  }
+}
+.t-is-disabled{
+  .t-input__limit-number{
+    background-color: var(--td-bg-color-component-disabled);
+  }
+}
+//上传图片loading时的颜色修改
+.t-loading__gradient-conic{
+  background-image: radial-gradient(50% 100%, #ffffff00 0%, #00B8A0 98%)!important;
+}
+// 文字按钮
+.font-bt {
+  color: var(--color-main);
+  cursor: pointer;
+  font-style: normal;
+  &:hover {
+    color: var(--color-hover);
+  }
+
+  &:active {
+    color: var(--color-active);
+  }
+  // 禁用的颜色
+  &.disabled {
+    // color: rgba(#008D71,0.50);
+    color: var(--color-bk4);
+    cursor: not-allowed;
+  }
+}
+
+.font-del {
+  color: var(--color-error);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-error);
+  }
+
+  &:active {
+    color: var(--color-active);
+  }
+}
+
+.font-bt2 {
+  color: var(--color-font1);
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: var(--color-main);
+  }
+}
+
+.font-bt3 {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-white);
+    background-color: #8e9ba5;
+  }
+
+  &:active {
+    color: var(--color-white);
+    background-color: var(--color-font1);
+  }
+}
+
+.font-bt4 {
+  color: var(--color-font3);
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: var(--color-main);
+  }
+}
+.font-bt5 {
+  color: var(--color-main);
+}
+// 禁用样式
+.text-forbidden {
+  color: var(--color-bk4);
+  cursor: no-drop;
+
+  &:hover {
+    color: var(--color-bk4);
+  }
+}
+
+// 背景
+.bg {
+  background-color: var(--color-bk);
+}
+
+.bg-wt {
+  background-color: var(--color-white);
+}
+.errorTip {
+  color: var(--td-error-color);
+}
+// flex 布局
+.fx {
+  display: flex;
+}
+
+.fx-fd-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.fx-1 {
+  flex: 1;
+}
+
+.fx-sb {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fx-ct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fx-cl-ct {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fx-al-ct {
+  display: flex;
+  align-items: center;
+}
+
+.fx-wp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+// 位置
+
+.pt-rt {
+  position: relative;
+}
+
+.pt-at {
+  position: absolute;
+}
+
+// 常用(内外)边距
+.marg-24 {
+  margin: 24px;
+}
+.marg-main {
+  margin: 0 20px;
+}
+.pd-main {
+  padding: 0 20px;
+}
+.marg-24 {
+  margin: 32px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.pd-box {
+  padding: 20px;
+}
+.pd-24 {
+  padding: 24px;
+}
+
+.pd-32 {
+  padding: 32px;
+}
+.mb-24 {
+  margin-bottom: 24px;
+}
+.mt-24 {
+  margin-top: 24px;
+}
+.mb-16 {
+  margin-bottom: 16px;
+}
+// 文字
+.ft-ct {
+  text-align: center;
+}
+.ft-rt {
+  text-align: right;
+}
+.ft-wt-400 {
+  font-weight: 400;
+}
+
+.ft-wt-600 {
+  font-weight: 600;
+}
+
+.ft-12 {
+  font-size: 12px;
+}
+
+.ft-14 {
+  font-size: 14px;
+}
+
+.ft-16 {
+  font-size: 16px;
+}
+
+.ft-18 {
+  font-size: 18px;
+}
+
+.ft-20 {
+  font-size: 20px;
+}
+
+.ft-cl-1 {
+  color: var(--color-font1);
+}
+.ft-cl-warn {
+  color: var(--color-warning);
+}
+.ft-cl-des {
+  color: var(--color-font3);
+}
+
+.ft-cl-err {
+  color: var(--color-error);
+}
+
+.ft-cl-wt {
+  color: var(--color-white);
+}
+
+// 常用样式
+.cur-pt {
+  cursor: pointer;
+}
+
+.bd-non {
+  border-color: transparent!important;
+}
+.bd-have{
+  border-bottom: solid 1px var(--color-border);
+}
+
+.br-8 {
+  border-radius: 8px;
+}
+
+// 公用图片头像
+.img {
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  margin-right: 10px;
+}
+.z-1 {
+  z-index: 1;
+}
+// 变小手
+.pt {
+  cursor: pointer;
+}
+
+// 定义宽度(用于常见的按钮宽度或者其他)
+.wt-60 {
+  width: 60px;
+}
+// 用于常见input宽度或者其他
+.wt-240 {
+  width: 240px;
+}
+.wt-88 {
+  width: 88px;
+}
+.wt-120 {
+  width: 120px;
+}
+// 定义右侧内容自动高度
+.ht {
+  height: calc(100% - 20px);
+}
+// 宽度300
+.wt-300 {
+  max-width: 300px;
+  min-width: 150px;
+}
+// 宽度400
+.wt-400 {
+  width: 400px;
+}
+// 最小宽度480
+.mw-480 {
+  min-width: 480px;
+}
+// 圆角2px
+.br-2 {
+  border-radius: 2px;
+}
+//
+.t-checkbox__label {
+  color: var(--color-bk3);
+}
+// 右面白色背景最小高度
+.min-h {
+  min-height: calc(100vh - 160px);
+}
+// 步骤条
+.min-steph {
+  min-height: calc(100vh - 230px);
+}
+

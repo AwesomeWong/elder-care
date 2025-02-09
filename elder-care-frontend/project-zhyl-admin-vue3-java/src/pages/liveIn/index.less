@@ -1,0 +1,224 @@
+.floorInfo {
+    display: flex;
+    padding: 20px 0 0;
+
+    ul {
+        flex: 1;
+        display: flex;
+
+        li {
+            padding-right: 30px;
+            display: flex;
+            align-items: center;
+            color: var(--color-bk2);
+        }
+    }
+
+
+
+}
+
+.houseList {
+    display: flex;
+    padding-top: 16px;
+    flex-wrap:wrap;
+    margin-left: -20px;
+    .item {
+        box-shadow: 0 2px 12px 0 #93939333;
+        border-radius: 2px;
+        margin-left: 20px;
+        padding: 14px;
+        margin-bottom: 20px;
+        width: calc(50% - 20px);
+        display: inline-block;
+    }
+
+    .title {
+        display: flex;
+
+        .lText {
+            display: flex;
+            align-items: center;
+            color: var(--color-bk1);
+            height: 25px;
+            flex: 1;
+
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+
+            span {
+                cursor: pointer;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                margin-left: 4px;
+                border-radius: 3px;
+                &:hover{
+                    background-color: #F0F7F5;
+                }
+                &:active{
+                    background-color: #D2E8E1;
+                }
+                &.forbidDelect{
+                    &:hover,&:active{background-color: transparent;}
+                }
+            }
+        }
+
+        span {
+            cursor: pointer;
+
+            &.add {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+            }
+
+            ;
+
+            &.num {
+                background: var(--color-aux5);
+                border-radius: 7.6px 1px 7.6px 1px;
+                margin-right: 5px;
+                font-size: 10px;
+                line-height: 18px;
+                padding: 0 4px;
+                margin-left: 10px;
+            }
+
+            &.name {
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+    .bedList {
+        
+        ul {
+            display: flex;
+            margin-left: -12px;
+            flex-wrap: wrap;
+            .unusual{
+              border: 1px solid #E34D59;
+              background: #FCF8F8!important;
+            }
+            li {
+                margin: 14px 0 0 12px;
+                line-height: 22px;
+                padding: 14px;
+                display: flex;
+                width: calc(50% - 12px);
+                color: var(--color-bk3);
+                position: relative;
+                border-radius: 2px;
+
+                &.leisure {
+                    background: #F5F5F5;
+                }
+
+                &.checkIn {
+                    background: #F6FBFA;
+                }
+
+                &.goOutIcon {
+                    background: #FCFBF4;
+                }
+
+                .bedHover {
+                    opacity: 1;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+
+                &:hover {
+                    
+                    .bedHover {
+
+                        background: rgba(0, 0, 0, 0.3);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        span {
+                            cursor: pointer;
+                            background-color: #F6FBFA;
+                            display: inline-block;
+                            width: 22px;
+                            height: 22px;
+                            border-radius: 50%;
+                            margin: 0 7px;
+                        }
+                    }
+                    .bedNoHover{
+                        display: none;
+                    }
+                }
+                .radio{
+                    position: absolute;
+                    right: -8px;
+                    top: -5px;
+                }
+            }
+        }
+    }
+}
+.dialogHeight {
+    height: 433px;
+}
+
+.heighta {
+    height: 383px;
+}
+.liveInBox{
+    .tableBoxs{
+        margin: 0;
+    }
+}
+/* 当页面宽度是最小1580.最大1740的时候例表的搜索表单改变列表宽度，暂时一行最多4个 + 按钮 */
+@media screen and (min-width:1605px) and (max-width:2051px) {
+    .houseList {
+        .item {
+            width: calc(33.3% - 20px);
+        }
+    }
+}
+.noData{
+    text-align: center;
+    color: var(--color-bk6);
+    padding: 50px 0;
+}
+.dialogBox {
+    &.roomDialog{
+       .t-dialog {
+           .t-table {
+               height: 390px;
+           }
+           
+       }
+       .noData{
+           padding: 0;
+           img{
+               margin-top: 30px;
+           }
+           p{
+               margin-bottom: 0;
+           }
+       }
+       
+   }
+}
+.configTpye{
+    &:hover{
+        .bedHover {
+            display: none;
+        }
+    }
+}

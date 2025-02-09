@@ -1,0 +1,1 @@
+import{I as t}from"./index.2854391f.js";function s(e){return t.get({url:"/elder/selectList",params:e})}function l(e){return t.get({url:"/elder/selectListByPage",params:e})}function a(e){return t.get({url:"/elder/selectByIdCard",params:e})}export{a,l as b,s as g};

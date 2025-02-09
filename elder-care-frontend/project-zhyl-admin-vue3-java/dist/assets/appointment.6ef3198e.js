@@ -1,0 +1,1 @@
+import{I as i}from"./index.2854391f.js";function r(t){return i.get({url:"/reservation/page",params:t})}function s(t){return i.get({url:"/visit/page",params:t})}function u(t){return i.put({url:`/reservation/${t.id}/visit?time=${t.time}`})}function n(t){return i.post({url:"/visit",data:t})}export{s as a,n as b,r as g,u as v};

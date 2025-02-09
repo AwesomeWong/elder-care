@@ -1,0 +1,87 @@
+
+.contentBox {
+  height: 85vh;
+  padding-top: 81px;
+  padding-left: 90px;
+  padding-right: 90px;
+  // .t-form__label{
+  //   float: left;
+  // }
+  // .t-form__item{
+  //   display: flex;
+  // }
+  .headbox {
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--color-black);
+    margin-bottom: 26px;
+  }
+  .bodybox {
+    .leftBox {
+      width: 48%;
+      height: 100%;
+      background-color: #fff;
+      margin-right: 100px;
+      .upbutton {
+        margin-top: 24px;
+      }
+    }
+    .rightBox {
+      width: 48%;
+      height: 100%;
+      background-color: #fff;
+      :deep(.t-button .t-button__text) {
+        color: var(--color-bk2);
+      }
+      .file {
+        margin-bottom: 9px;
+      }
+      .t-form__controls-content{
+        display: block;
+      }
+      .upbtn{
+        margin-left: 0;
+      }
+    }
+    .t-form__item{
+      margin-bottom: 12px;
+    }
+  }
+  .t-upload__card-content, .t-upload__card-container {
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+}
+.t-form {
+  width: 100%;
+  display: flex;
+}
+}
+
+.updateInfo {
+  text-align: center;
+  button{
+    display: inline-block;
+    margin: 0 8px;
+  }
+}
+// 提示文字
+:deep(.t-upload) {
+  position: relative;
+  .t-upload__tips {
+    position: absolute;
+    bottom: -66px;
+    left: 18.5px;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--color-bk4);
+  }
+  .t-upload__card-name {
+    display: none;
+    position: absolute;
+    bottom: -66px;
+    left: 18.5px;
+    color: var(--color-bk5);
+  }
+}
