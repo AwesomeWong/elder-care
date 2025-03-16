@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-framework/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-pay/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-pay/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wyyl-web/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zzyl.mapper.NursingProjectMapper">
+
+    <resultMap id="nursingProjectResultMap" type="com.zzyl.entity.NursingProject">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="order_no" property="orderNo"/>
+        <result column="unit" property="unit"/>
+        <result column="price" property="price"/>
+        <result column="image" property="image"/>
+        <result column="nursing_requirement" property="nursingRequirement"/>
+        <result column="status" property="status"/>
+        <result column="create_by" property="createBy"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="remark" property="remark"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="creator" property="creator"/>
+    </resultMap>
+
+    <!-- 新增护理项目 -->
+    <insert id="insert">
+        insert into nursing_project (name, order_no, unit, price, image, nursing_requirement, status, create_by,
+                                     update_by, remark, create_time, update_time)
+        values (#{name}, #{orderNo}, #{unit}, #{price}, #{image}, #{nursingRequirement}, #{status}, #{createBy},
+                #{updateBy}, #{remark}, #{createTime}, #{updateTime})
+    </insert>
+
+    <!-- 根据编号查询护理项目信息 -->
+    <select id="selectById" resultMap="nursingProjectResultMap">
+        select *
+        from nursing_project
+        where id = #{id}
+    </select>
+
+    <!-- 分页查询护理项目列表 -->
+    <select id="selectByPage" resultMap="nursingProjectResultMap">
+        select p.id, p.name, p.order_no, p.unit, p.price, p.image, p.nursing_requirement, p.status, p.create_by,
+        p.update_by, p.remark, p.create_time, p.update_time
+        , s.real_name as creator
+        from nursing_project p
+        LEFT JOIN sys_user s ON p.create_by = s.id
+        <where>
+            <if test="name != null and name != ''">
+                and name like concat('%', #{name}, '%')
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+        order by p.order_no, p.create_time desc
+    </select>
+    <select id="listAll" resultType="com.zzyl.vo.NursingProjectVo">
+        select *
+        from nursing_project
+        where status = 1
+        order by order_no, create_time desc
+    </select>
+
+    <!-- 更新护理项目信息 -->
+    <update id="update">
+        update nursing_project
+        set name                = #{name},
+            order_no            = #{orderNo},
+            unit                = #{unit},
+            price               = #{price},
+            image               = #{image},
+            nursing_requirement = #{nursingRequirement},
+            status              = #{status},
+            update_by           = #{updateBy},
+            remark              = #{remark},
+            update_time         = #{updateTime}
+        where id = #{id}
+    </update>
+
+    <!-- 删除护理项目信息 -->
+    <delete id="deleteById">
+        delete
+        from nursing_project
+        where id = #{id}
+    </delete>
+
+    <update id="updateStatus">
+        UPDATE nursing_project
+        SET status      = #{status},
+            update_time = #{updateTime},
+            update_by   = #{updateBy}
+        WHERE id = #{id}
+    </update>
+</mapper>

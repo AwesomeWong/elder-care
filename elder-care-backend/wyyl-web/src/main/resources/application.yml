@@ -1,0 +1,117 @@
+#服务配置
+server:
+  #端口
+  port: 9995
+  #服务编码
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: zzyl
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  cache:
+    type: redis
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 6MB
+  #数据源配置
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url:
+      username: root
+      password:
+  redis:
+    host:
+    port:
+    password:
+  activiti:
+    #是否让activiti自动创建所有的历史表
+    history-level: full
+    #是否需要使用历史表,默认false不使用,而配置true是使用历史表
+    db-history-used: true
+    #流程自动部署，关闭，需要手动部署流程 服务启动的时候自动检查resources目录下的bpmn文件 如果为true自动部署流程
+    check-process-definitions: false
+    #关闭启动服务自动框架部署
+    deployment-mode: never-fail
+# MyBatis配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath*:mapper*/*Mapper.xml
+  type-aliases-package: com.zzyl.entity
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 驼峰下划线转换
+    map-underscore-to-camel-case: true
+    use-generated-keys: true
+    default-statement-timeout: 60
+    default-fetch-size: 100
+logging:
+  config: classpath:logback.xml
+  level:
+    org.springframework.web.socket: info
+knife4j:
+  enable: true
+zzyl:
+  framework:
+    security:
+      ignore-url:
+#        - /**
+        - /resource/menus/**
+        - /resource/myButten/**
+        - /customer/**
+        - /security/login
+        - /security/logout
+        - /doc.html
+        - /*-swagger/**
+        - /swagger-resources
+        - /v2/api-docs
+        - /webjars/**
+        - /common/**
+        - /ws/**
+      defaule-password: 888itcast.CN764%...
+    swagger:
+
+    jwt:
+      base64-encoded-secret-key:
+      ttl: 3600000
+    oss:
+      endpoint:
+      accessKeyId:
+      accessKeySecret:
+      bucketName:
+  wechat:
+    appId:
+    appSecret:
+
+  aliyun:
+    accessKeyId:
+    accessKeySecret:
+#    consumerGroupId: DEFAULT_GROUP
+    consumerGroupId:
+    regionId: cn-shanghai
+    iotInstanceId: iot-
+    host:
+
+management:
+  health:
+    rabbit:
+      enabled: false
+xxl:
+  job:
+    admin:
+      addresses: h
+    executor:
+      appname: zzyl-dev-executor
+      port: 9999
+      # admin 123456
